@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.xworkz.mobile.Mobile" id="mobile">
+		<constructor-arg name="brand" value="samsung"></constructor-arg>
+		<constructor-arg name="color" value="blue"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Boolean" id="boolean">
+		<constructor-arg value="True"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Character" id="character">
+		<constructor-arg value="M"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Byte" id="byte">
+		<constructor-arg value="127"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Short" id="shot">
+		<constructor-arg value="32767"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Integer" id="integer">
+		<constructor-arg value="1"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Long" id="long">
+		<constructor-arg value="6363365808"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Float" id="float">
+		<constructor-arg value="4.0"></constructor-arg>
+	</bean>
+
+	<bean class="java.lang.Double" id="double">
+		<constructor-arg value="27000.00"></constructor-arg>
+	</bean>
+
+</beans>
