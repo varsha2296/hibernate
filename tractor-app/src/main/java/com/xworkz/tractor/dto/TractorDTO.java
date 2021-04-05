@@ -36,7 +36,7 @@ public class TractorDTO implements java.io.Serializable {
 	private int milage;
 
 	public TractorDTO() {
-		super();
+		System.out.println(this.getClass().getSimpleName() + " object created");
 	}
 
 	public TractorDTO(String model, double cost, String color, double fuelCapacity, int loadCapacity, int milage) {
@@ -47,6 +47,7 @@ public class TractorDTO implements java.io.Serializable {
 		this.fuelCapacity = fuelCapacity;
 		this.loadCapacity = loadCapacity;
 		this.milage = milage;
+		System.out.println(this.getClass().getSimpleName() + " object created");
 	}
 
 	public int getTractorID() {

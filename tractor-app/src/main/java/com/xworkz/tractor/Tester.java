@@ -14,7 +14,7 @@ public class Tester {
 		ApplicationContext context = new ClassPathXmlApplicationContext(contextConfigLocation);
 
 		TractorDAO tractorDAO = context.getBean(TractorDAO.class);
-		TractorDTO tractorDTO = new TractorDTO("Kubota", 600000.0, "Orange", 34, 1600, 30);
+		TractorDTO tractorDTO = new TractorDTO("International Harvester", 400000.0, "Red", 64, 2000, 25);
 		tractorDAO.saveTractor(tractorDTO);
 	}
 
