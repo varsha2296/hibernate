@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.xworkz.tractor.dao.TractorDAOImpl"
+		id="tractorDAOImpl">
+		<constructor-arg name="factory"
+			ref="localSessionFactoryBean"></constructor-arg>
+	</bean>
+
+	<bean
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+		id="localSessionFactoryBean">
+		<property name="dataSource" ref="driverManagerDataSource"></property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.xworkz.tractor.dto.TractorDTO</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="driverManagerDataSource">
+		<constructor-arg
+			value="${driverManagerDataSource.url}"></constructor-arg>
+		<constructor-arg
+			value="${driverManagerDataSource.username}"></constructor-arg>
+		<constructor-arg
+			value="${driverManagerDataSource.password}"></constructor-arg>
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+		id="propertyPlaceholderConfigurer">
+		<property name="location" value="application.properties"></property>
+	</bean>
+</beans>
